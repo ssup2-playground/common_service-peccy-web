@@ -4,6 +4,12 @@ phases:
   pre_build:
     commands:
       - echo Logging in to ECR...
+      - echo version - $CODEBUILD_SOURCE_VERSION
+      - echo version - $CODEBUILD_RESOLVED_SOURCE_VERSION
+      - echo trigger - $CODEBUILD_WEBHOOK_TRIGGER
+      - echo head - $CODEBUILD_WEBHOOK_HEAD_REF
+      - echo webhook - $CODEBUILD_WEBHOOK_EVENT
+      - echo merge - $CODEBUILD_WEBHOOK_MERGE_COMMIT
       - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-2.amazonaws.com
       - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com
   build:
