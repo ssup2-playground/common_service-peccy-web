@@ -12,7 +12,7 @@ const Header = () => {
             Peccy (Sample service by ssupp@amazon.com)
           </Typography>
           <Typography variant="body1" component="div" sx={{ flexGrow: 0 }}>
-            Version v0.1.0
+            AWS Region {process.env.AWS_REGION} / Version v0.1.0
           </Typography>
         </Toolbar>
       </AppBar>

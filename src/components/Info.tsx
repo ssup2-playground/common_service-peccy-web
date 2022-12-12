@@ -12,7 +12,6 @@ const Info = () => {
 
   useEffect(() => {
     getInfoName().then((response) => {
-      console.log(response.data.name)
       setName(response.data.name)
     })
   }, []);
