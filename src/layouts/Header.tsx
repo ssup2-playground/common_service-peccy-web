@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+import { getEnv } from '../env';
+
 const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -12,7 +14,7 @@ const Header = () => {
             Peccy (Sample service by ssupp@amazon.com)
           </Typography>
           <Typography variant="body1" component="div" sx={{ flexGrow: 0 }}>
-            AWS Region {process.env.AWS_REGION} / Version v0.1.0
+            AWS Region - {getEnv().AWS_REGION} / Version - v0.1.0
           </Typography>
         </Toolbar>
       </AppBar>
