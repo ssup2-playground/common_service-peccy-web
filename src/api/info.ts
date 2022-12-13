@@ -1,8 +1,8 @@
 import axios from "axios";
+import { getEnv } from "../env";
 
-const appServerURL = "127.0.0.1"
-
-export const infoPictureURL = "http://" + appServerURL + "/infos/picture"
+export const infoPictureURL = getEnv().API_ENDPOINT + "/infos/picture"
 export const getInfoName = () => {
-    return axios.get("http://" + appServerURL + "/infos/name")
+    return axios.get(getEnv().API_ENDPOINT + "/infos/name")
 }
+
