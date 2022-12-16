@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { getInfoName, infoPictureURL, putInfoPicture } from '../api/info';
 
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
@@ -8,6 +7,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
+
+import { getInfoName, infoPictureURL, putInfoPicture } from '../api/info';
 
 const Info = () => {
   const [name, setName] = useState<string>();

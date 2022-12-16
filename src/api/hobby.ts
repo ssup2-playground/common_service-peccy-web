@@ -14,3 +14,11 @@ export const createHobby = (name: string) => {
 export const deleteHobby = (id: number) => {
   return axios.delete(getEnv().API_ENDPOINT + "/hobbies/" + id)
 }
+
+export const getRegion = () => {
+  return axios.get(getEnv().API_ENDPOINT + "/debugs/region")
+}
+
+export const getVersion = () => {
+  return axios.get(getEnv().API_ENDPOINT + "/debugs/version")
+} 
