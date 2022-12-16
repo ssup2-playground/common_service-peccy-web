@@ -9,15 +9,15 @@ import { getDebugRegion, getDebugVersion } from '../api/debug';
 import { getEnv } from '../env';
 
 const Header = () => {
-  const [region, setRegion] = useState<string>();
-  const [version, setVersion] = useState<string>();
+  const [appRegion, setAppRegion] = useState<string>();
+  const [appVersion, setAppVersion] = useState<string>();
 
   useEffect(() => {
     getDebugRegion().then((response) => {
-      setRegion(response.data.region)
+      setAppRegion(response.data.region)
     })
     getDebugVersion().then((response) => {
-      setVersion(response.data.version)
+      setAppVersion(response.data.version)
     })
   }, []);
 
@@ -29,7 +29,7 @@ const Header = () => {
             Peccy (Sample Service by ssupp@amazon.com)
           </Typography>
           <Typography variant="body1" component="div" sx={{ flexGrow: 0 }}>
-            Web - {getEnv().AWS_REGION} v0.1.1 / App - Local v0.1.0
+            Web - {getEnv().AWS_REGION} v0.3.1 / App - {appRegion} {appVersion}
           </Typography>
         </Toolbar>
       </AppBar>
