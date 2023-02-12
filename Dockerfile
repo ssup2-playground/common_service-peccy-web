@@ -1,6 +1,7 @@
 FROM node:19.2-alpine AS builder
 WORKDIR /app
 COPY package.json yarn.lock .env ./
+RUN yarn add @mui/icons-material --network-timeout 500000 # https://github.com/yarnpkg/yarn/issues/8754
 RUN yarn install --frozen-lockfile
 COPY . .
 RUN yarn build
