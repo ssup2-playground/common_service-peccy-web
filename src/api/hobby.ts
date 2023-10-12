@@ -1,24 +1,23 @@
 import axios from "axios";
-import { getEnv } from "../env";
 
 export const listHobby = () => {
-  return axios.get(getEnv().API_ENDPOINT + "/hobbies")
+  return axios.get(process.env.REACT_APP_API_ENDPOINT + "/hobbies")
 }
 
 export const createHobby = (name: string) => {
-  return axios.post(getEnv().API_ENDPOINT + "/hobbies", {
+  return axios.post(process.env.REACT_APP_API_ENDPOINT + "/hobbies", {
     name: name
   })
 }
 
 export const deleteHobby = (id: number) => {
-  return axios.delete(getEnv().API_ENDPOINT + "/hobbies/" + id)
+  return axios.delete(process.env.REACT_APP_API_ENDPOINT + "/hobbies/" + id)
 }
 
 export const getRegion = () => {
-  return axios.get(getEnv().API_ENDPOINT + "/debugs/region")
+  return axios.get(process.env.REACT_APP_API_ENDPOINT + "/debugs/region")
 }
 
 export const getVersion = () => {
-  return axios.get(getEnv().API_ENDPOINT + "/debugs/version")
+  return axios.get(process.env.REACT_APP_API_ENDPOINT + "/debugs/version")
 } 
